@@ -100,23 +100,31 @@ class _PizzaOrderPageState extends State<PizzaOrderPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('Select your options:'),
-                  CheckboxListTile(
-                    title: Text('Extra Cheese'),
-                    value: _extraCheese,
-                    onChanged: (value) {
-                      setState(() {
-                        _extraCheese = value ?? false;
-                      });
-                    },
+                  Row(
+                    children: [
+                      Checkbox(
+                        value: _extraCheese,
+                        onChanged: (value) {
+                          setState(() {
+                            _extraCheese = value ?? false;
+                          });
+                        },
+                      ),
+                      Text('Extra Cheese (\$1.00)'),
+                    ],
                   ),
-                  CheckboxListTile(
-                    title: Text('Garlic'),
-                    value: _garlic,
-                    onChanged: (value) {
-                      setState(() {
-                        _garlic = value ?? false;
-                      });
-                    },
+                  Row(
+                    children: [
+                      Checkbox(
+                        value: _garlic,
+                        onChanged: (value) {
+                          setState(() {
+                            _garlic = value ?? false;
+                          });
+                        },
+                      ),
+                      Text('Garlic (\$0.50)'),
+                    ],
                   ),
                 ],
               ),
